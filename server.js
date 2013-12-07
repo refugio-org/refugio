@@ -46,12 +46,14 @@ server.get('/', function(req, res) {
 var management = require('./routes/management.js');
 var places = require('./routes/places.js');
 var categories = require('./routes/categories.js');
-var shopping = require('./routes/shopping.js')
+var shopping = require('./routes/shopping.js');
+var checkout = require('./routes/checkout.js');
 
 server.get('/places/:name', places.create);
 server.get('/places', places.list);
 server.get('/cats',categories.list);
 server.get('/management', management.list);
-server.get('/shopping', shopping.demo)
+server.get('/shopping', shopping.demo);
+server.get('/checkout', checkout.demo);
 
 server.listen(process.env.PORT || 3000);
