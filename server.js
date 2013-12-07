@@ -45,9 +45,11 @@ server.get('/', function(req, res) {
 
 var management = require('./routes/management.js');
 var places = require('./routes/places.js');
+var categories = require('./routes/categories.js');
 
 server.get('/places/:name', places.create);
 server.get('/places', places.list);
+server.get('/cats',categories.list);
 server.get('/management', management.list);
 
 server.listen(process.env.PORT || 3000);

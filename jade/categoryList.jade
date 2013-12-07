@@ -1,0 +1,7 @@
+extend _layout.jade
+
+block content
+  h1 Category
+  ul
+    each c, i in cats
+      li= c.name
