@@ -3,7 +3,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 // connect db
-mongoose.connect('mongodb://localhost/refugio');
+mongoose.connect(process.env.MONGOHQ_URL || 'mongodb://localhost/refugio');
 
 
 // app server
