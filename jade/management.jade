@@ -2,20 +2,47 @@ extend _layout.jade
 
 block content
   .hero-unit
+    h1 Manage Inventory
     p 
-      select
+      select(name="Types")
         option(value="") Choose
-        option(value="Food") Food
-        option(value="Clothing") Clothing
-        option(value="Misc") Misc
+        option(value="bathroom") Bathroom
+        option(value="clothing") Clothing
+        option(value="food") Food
+        option(value="other") Other
 
-    button(value="add") Add
-    button(value="remove") Remove
-    button(value="recount") Recount
-    
-    p
-      select
-        option(value="") Choose
-        option(value="Jacket") Food
-        option(value="Clothing") Clothing
-        option(value="Misc") Misc    
+
+        .bathroom.hidden
+          select(name="bathroom")
+            option(value="") Choose
+            option(value="Jacket") Food
+            option(value="Clothing") Clothing
+            option(value="Misc") Misc    
+
+        .clothing.hidden
+          select(name="clothing")
+            option(value="") Choose
+            option(value="Jacket") Food
+            option(value="Clothing") Clothing
+            option(value="Misc") Misc
+
+        .food.hidden
+          select(name="food")
+            option(value="") Choose
+            option(value="Jacket") Food
+            option(value="Clothing") Clothing
+            option(value="Misc") Misc
+
+        .other.hidden
+          select(name="misc")
+            option(value="") Choose
+            option(value="Jacket") Food
+            option(value="Clothing") Clothing
+            option(value="Misc") Misc
+
+        .actions.hidden
+          .glyphicon.glyphicon-plus-sign.action.btn(value="add")
+          .glyphicon.glyphicon-minus-sign.action.btn(value="remove")
+          .glyphicon.glyphicon-sort.action.btn(value="recount")
+        
+script(src='/js/management.js')
