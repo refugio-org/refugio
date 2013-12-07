@@ -58,3 +58,5 @@ server.get('/shopping', shopping.list);
 server.get('/checkout', checkout.demo);
 
 server.listen(process.env.PORT || 3000);
+
+require('./reference/addDataToDb.js');
