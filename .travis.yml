@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "0.10"
+
+deploy:
+  provider: heroku
+  api_key: '1a869e18-063f-4111-a4f6-90a1f9029395'
+  app: refugio-test
