@@ -8,9 +8,11 @@
     "mysql": "~2.0.0-alpha9",
     "jade": "~0.35.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jasmine-node": "1.11.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node --growl spec/"
   },
   "repository": {
     "type": "git",
