@@ -5,35 +5,35 @@ block content
     h1 Manage Inventory
     p 
       select(name="Types")
-        option(value="") Choose
+        option(value="null") Choose
         option(value="bathroom") Bathroom
         option(value="clothing") Clothing
         option(value="food") Food
         option(value="other") Other
 
-
-        .bathroom.hidden
+        .bathroom.hidden.type
           select(name="bathroom")
-            option(value="") Choose
-            option(value="Jacket") Food
-            option(value="Clothing") Clothing
-            option(value="Misc") Misc    
+            option(value="null") Choose
+            option(value="Toothpaste") Toothpaste
+            option(value="Soap") Soap
+            option(value="Shampoo") Shampoo    
 
-        .clothing.hidden
+        .clothing.hidden.type
           select(name="clothing")
-            option(value="") Choose
-            option(value="Jacket") Food
-            option(value="Clothing") Clothing
-            option(value="Misc") Misc
+            option(value="null") Choose
+            option(value="Jacket") Jacket
+            option(value="Shirt") Shirt
+            option(value="Pants") Pants
 
-        .food.hidden
+        .food.hidden.type
           select(name="food")
-            option(value="") Choose
-            option(value="Jacket") Food
-            option(value="Clothing") Clothing
-            option(value="Misc") Misc
+            option(value="null") Choose
+            option(value="Cheese") Cheese
+            option(value="Milk") Milk
+            option(value="Bread") Bread
+            option(value="Chocolate") Chocolate
 
-        .other.hidden
+        .other.hidden.type
           select(name="misc")
             option(value="") Choose
             option(value="Jacket") Food
