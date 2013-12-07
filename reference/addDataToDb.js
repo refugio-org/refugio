@@ -84,7 +84,7 @@ function makeCats() {
 
 function makeItems() {
 
-    var i1 = new Item({name: "zahnbuerste", description: "youknow", location: places[0]._id, category: cats[0]._id, icon: "shower_demo.png"});
+    var i1 = new Item({name: "zahnbuerste", description: "youknow", location: places[0]._id, category: cats[0]._id, icon: "toothbrush-icon.png"});
     var i2 = new Item({name: "zahnpasta", description: "youknow", location: places[0]._id, category: cats[0]._id, icon: "shower_demo.png"});
     var i3 = new Item({name: "seife", description: "youknow", location: places[1]._id, category: cats[1]._id, icon: "shower_demo.png"});
     var i4 = new Item({name: "duschgel", description: "youknow", location: places[1]._id, category: cats[1]._id, icon: "shower_demo.png"});
