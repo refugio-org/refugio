@@ -3,3 +3,10 @@ body {
   padding-top: 70px;
   padding-bottom: 20px;
 }
+span  {
+  display: none;
+}
+
+li  {
+  float: left;
+}
