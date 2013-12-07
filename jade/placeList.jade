@@ -3,4 +3,6 @@ html
 		title refug.io
 	body
 		h1 Places
-		p= places
+		ul
+			each pl, i in places
+				li= pl.name
