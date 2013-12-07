@@ -1,12 +1,21 @@
 extend _layout.jade
 
 block content
+  .hero-unit
+    p 
+      select
+        option(value="") Choose
+        option(value="Food") Food
+        option(value="Clothing") Clothing
+        option(value="Misc") Misc
 
-  select
-    option(value="Food") Food
-    option(value="Clothing") Clothing
-    option(value="Misc") Misc
-
-  button(value="add") Add
-  button(value="remove") Remove
-  button(value="recount") Recount
+    button(value="add") Add
+    button(value="remove") Remove
+    button(value="recount") Recount
+    
+    p
+      select
+        option(value="") Choose
+        option(value="Jacket") Food
+        option(value="Clothing") Clothing
+        option(value="Misc") Misc    
