@@ -45,11 +45,8 @@ server.get('/', function(req, res) {
 
 var management = require('./routes/management.js');
 var places = require('./routes/places.js');
-<<<<<<< Updated upstream
 var categories = require('./routes/categories.js');
-=======
 var shopping = require('./routes/shopping.js')
->>>>>>> Stashed changes
 
 server.get('/places/:name', places.create);
 server.get('/places', places.list);
