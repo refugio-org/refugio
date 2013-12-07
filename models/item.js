@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 // we will have multiple types of items such as sizableItem, verderblichItem, etc...
  
 var itemModel = new Schema({
-	name: {type: String},
+  name: {type: String},
   description: {type: String},
   location: { type: Schema.Types.ObjectId, ref: 'Place' },
   category: { type: Schema.Types.ObjectId, ref: 'Category' },
