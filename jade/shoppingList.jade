@@ -1,0 +1,6 @@
+extend _layout.jade
+block content
+  ul.list-group Category: Other
+    each item in items
+      li.list-group-item
+       span #{item.name}

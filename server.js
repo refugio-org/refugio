@@ -53,7 +53,8 @@ server.get('/places/:name', places.create);
 server.get('/places', places.list);
 server.get('/cats',categories.list);
 server.get('/management', management.list);
-server.get('/shopping', shopping.demo);
+server.get('/shopping/demo', shopping.demo);
+server.get('/shopping', shopping.list);
 server.get('/checkout', checkout.demo);
 
 server.listen(process.env.PORT || 3000);
