@@ -5,13 +5,14 @@ var mongoose = require('mongoose');
 // connect db
 mongoose.connect(process.env.MONGOHQ_URL || 'mongodb://localhost/refugio');
 
+// middleware
+var cartMiddleware = require('./cartMiddleware.js');
 
 // app server
-var server = express();
+var server = module.exports = express();
 
 // express settings
 server.configure(function() {
-
     // log requests
     server.use(express.logger({format: ':method :url - :status'}));
 
@@ -25,8 +26,12 @@ server.configure(function() {
     server.use(express.methodOverride());
     server.use(express.cookieParser());
     server.use(express.session({secret: 'supersupersecret', key: 'refugio.sid' }));
+
     // serve static resoruces (css and stuff)
     server.use(express.static(process.cwd() + '/public'));
+
+    // always load or create a cart
+    server.use(cartMiddleware.loadCart);
 });
 
 // show errors in development
@@ -47,11 +52,19 @@ var management = require('./routes/management.js');
 var places = require('./routes/places.js');
 var categories = require('./routes/categories.js');
 var shopping = require('./routes/shopping.js')
+var cart = require('./routes/cart.js')
 
 server.get('/places/:name', places.create);
 server.get('/places', places.list);
 server.get('/cats',categories.list);
 server.get('/management', management.list);
-server.get('/shopping', shopping.demo)
+server.get('/shopping', shopping.demo);
 
-server.listen(process.env.PORT || 3000);
+server.post('/cart/item', cart.addItem);
+
+if (!module.parent) {
+    var port = process.env.PORT || 3000;
+    server.listen(port, function() {
+        console.log("Express server listening on port %d in %s mode", port, server.settings.env);
+    });
+}
