@@ -5,6 +5,7 @@ var mongoose = require('mongoose')
 var itemModel = new Schema({
   name: {type: String},
   description: {type: String},
+  icon: {type: String},
   location: { type: Schema.Types.ObjectId, ref: 'Place' },
   category: { type: Schema.Types.ObjectId, ref: 'Category' },
 });
