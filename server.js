@@ -43,10 +43,13 @@ server.get('/', function(req, res){
 	res.render('index.jade');
 });
 
+var management = require('./routes/management.js');
+
+
 var api = require('./api.js');
 // server.post('/thread', api.post);
 server.get('/places/:name', api.create);
 server.get('/places', api.list);
-
+server.get('/management', management.list);
 
 server.listen(process.env.PORT || 3000);
