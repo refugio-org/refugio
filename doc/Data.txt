@@ -3,7 +3,45 @@ general NEEDS / categories
 --------------------------
 
 bathroom/health
-bedroom/sleep
+- zaehneputzen
+ = zahnbuerste
+ = zahnpasta
+- toilette
+ = klopapier
+- waschen
+ = seife
+ = duschgel
+- trocknen
+ = Handtuch
+
+bedroom/sleep/outside
+- sleepingbag
+ = schlafsack XS - XXL
+- isomatte
+- decke
+- Zelt
+
 kitchen/food
-outside
+- Besteck
+- Geschirr
+- Topf/Pfanne
+- Kocher/Herd
+- Essensration
+- Brot
+- Sweets
+- Konservendose
+ = Bohnen
+ = Ravioli
+
+Clothing
+- Jacke 
+- Hose
+- Unterwäsche
+- Schuhe
+
 OTHER
+- Medical Attendance
+- Legal Advice
+
+
+
