@@ -4,7 +4,6 @@ var mongoose = require('mongoose')
 var reservationModel = new Schema({
   name: {type: String},
   expires: {type: Date},
-  origin: {type: String},
   items: [{ type: Schema.Types.ObjectId, ref: 'Item' }]
 });
 
