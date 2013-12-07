@@ -38,6 +38,7 @@ var tlCat = [];
 var cats = [];
 var places = [];
 var items = [];
+var reservations = [];
 
 function makePlaces() {
     var p1 = new Place({ "name": "Gängeviertel", "address": "just around the corner", "telefon": "040-123456" });
@@ -91,12 +92,32 @@ function makeItems() {
     var i5 = new Item({name: "schlafsack", description: "youknow", location: places[0]._id, category: cats[2]._id, icon: "shower_demo.png"});
     var i6 = new Item({name: "isomatte", description: "youknow", location: places[0]._id, category: cats[3]._id, icon: "shower_demo.png"});
 
-    i1.save(saveCb(items));
-    i2.save(saveCb(items));
-    i3.save(saveCb(items));
-    i4.save(saveCb(items));
-    i5.save(saveCb(items));
-    i6.save(saveCb(items));
+    i1.save(function(err, it1) {
+        if (err) throw err;
+        cats.push(it1);
+        i2.save(function(err, it2) {
+            if (err) throw err;
+            cats.push(it2);
+            i3.save(function(err, it3) {
+                if (err) throw err;
+                cats.push(it3);
+                i4.save(function(err, it4) {
+                    if (err) throw err;
+                    cats.push(it4);
+                    i5.save(function(err, it5) {
+                        if (err) throw err;
+                        cats.push(it5);
+                        i6.save(function(err, it6) {
+                            if (err) throw err;
+                            cats.push(it6);
+                    	    var r1 = new Reservation({name: "dummy reservation", items: [it3._id, it4._id]});
+                    	    r1.save(saveCb(reservations));
+                        });
+                    });
+                });
+            });
+        });
+    });
 }
 
 cleanDb();
