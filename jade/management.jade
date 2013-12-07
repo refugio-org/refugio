@@ -10,21 +10,21 @@ block content
         option(value="clothing") Clothing
         option(value="food") Food
         option(value="other") Other
-
-        .bathroom.hidden.type
-          select(name="bathroom")
-            option(value="null") Choose
-            option(value="Toothpaste") Toothpaste
-            option(value="Soap") Soap
-            option(value="Shampoo") Shampoo    
-
-        .clothing.hidden.type
+    p
+      .bathroom.hidden.type
+        select(name="bathroom")
+          option(value="null") Choose
+          option(value="Toothpaste") Toothpaste
+          option(value="Soap") Soap
+          option(value="Shampoo") Shampoo    
+    p
+       .clothing.hidden.type
           select(name="clothing")
             option(value="null") Choose
             option(value="Jacket") Jacket
             option(value="Shirt") Shirt
             option(value="Pants") Pants
-
+    p
         .food.hidden.type
           select(name="food")
             option(value="null") Choose
@@ -32,14 +32,14 @@ block content
             option(value="Milk") Milk
             option(value="Bread") Bread
             option(value="Chocolate") Chocolate
-
+    p
         .other.hidden.type
           select(name="misc")
             option(value="") Choose
-            option(value="Jacket") Food
-            option(value="Clothing") Clothing
-            option(value="Misc") Misc
-
+            option(value="Flutes") Food
+            option(value="Backpacks") Clothing
+            option(value="Flashlights") Misc
+    p
         .actions.hidden
           .glyphicon.glyphicon-plus-sign.action.btn(value="add")
           .glyphicon.glyphicon-minus-sign.action.btn(value="remove")
