@@ -18,7 +18,6 @@ server.configure(function(){
   // setup jade rendering
   // docu: http://jade-lang.com
   server.set('view engine', 'jade');
-  server.set('view options', {layout: false});
   server.set('views', __dirname + '/jade');
   
   // parse headers and cookies and stuff

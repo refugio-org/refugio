@@ -1,8 +1,7 @@
-html
-	head
-		title refug.io
-	body
-		h1 Places
-		ul
-			each pl, i in places
-				li= pl.name
+extend _layout.jade
+
+block content
+	h1 Places
+	ul
+		each pl, i in places
+			li= pl.name

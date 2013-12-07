@@ -12,9 +12,7 @@ exports.create = function(req, res) {
 exports.list = function(req, res) {
   var qry = Place.find({}, function(err, results) {
   	if (err) throw err;
-    // res.send(threads);
     console.log(results)
     res.render("placeList.jade", {places: results});
-    // res.send(results);
   });
 }
