@@ -1,0 +1,9 @@
+
+general NEEDS / categories
+--------------------------
+
+bathroom/health
+bedroom/sleep
+kitchen/food
+outside
+OTHER

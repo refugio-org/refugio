@@ -1,0 +1,20 @@
+
+flow 
+----
+- select location of pickup
+- see all available stuff
+- move items to "cart"
+- receive voucher
+
+design
+------
+by category flat list
+cart area
+carry-out person
+
+
+
+ideas
+-----
+map of location
+

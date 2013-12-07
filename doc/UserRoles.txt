@@ -1,0 +1,22 @@
+Shopper
+-------
+(- communicate needs)
+- check availability
+- reserve stuff
+
+
+Logistics
+---------
+- add _item_ in _location_
+- correct what is available
+- see availability everywhere
+
+Cashier
+-------
+- selects stuff and hands it out
+- might receive preselection from voucher
+
+
+
+
+
