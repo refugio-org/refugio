@@ -50,4 +50,4 @@ server.get('/places/:name', api.create);
 server.get('/places', api.list);
 
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
