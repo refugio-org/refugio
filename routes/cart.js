@@ -8,11 +8,11 @@ exports.listItems = function(req, res) {
 			if (err) throw err;
 			console.log("items:"+found);
 			res.render('cart/listItems', {reservation: req.reservation, items: found});
-		})
+		});
 	} else {
 		res.render('cart/listItems', {reservation: req.reservation, items: []});
 	}
-}
+};
 
 exports.addItem = function(req, res) {
 	Item.findById(req.body.product, function(err, found) {
@@ -23,5 +23,9 @@ exports.addItem = function(req, res) {
 			res.send(201);
 		});
 
-	})
-}
+	});
+};
+
+exports.demo = function(req, res) {
+  res.render("checkout.jade", {});
+};
