@@ -5,24 +5,43 @@ body {
   background:rgba(0,0,0,0.15);
   overflow:hidden !important;
 }
-
+li {
+  list-style-type:none;
+}
 
 
 /* designer classes */
-.h1 {
+h1 {
   font-weight:900;
 }
+
+h2 {
+  color:rgba(70,70,255,0.8);
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.9), -2px -2px 4px rgba(255,255,255,0.9), -2px 2px 4px rgba(255,255,255,0.9), 2px -2px 4px rgba(255,255,255,0.9);
+  font-weight:900;
+}
+
 img.shopping {
   position:fixed;
+  top:0.5em;
   right:0.2em;
   width:64px;
   height:64px;
   z-index:0;
+  opacity:0.3;
+  cursor:pointer;
 }
+.shopping {
+  position:fixed;
+  top:1em;
+  right:3.5em;
+}
+
+
 .counter {
   position:fixed;
   right:1.9em;
-  top:-0.5em;
+  top:-0.4em;
   padding:0.5em;
   margin:0.5em;
   z-index:10;
@@ -34,9 +53,14 @@ img.shopping {
 }
 .item {
   float:left;
+  height:128px;
+  width:128px;
+  overflow:hidden;
 }
 .item span {
-  display:none;
+position:absolute;
+left:10px;
+text-shadow:1px 1px #fff,-1px 1px #fff,1px -1px #fff,-1px -1px #fff;
 }
 .cart {
 position:fixed;
@@ -49,13 +73,12 @@ margin:0;
 display:inline-block;
 border-bottom:3px solid rgba(0,0,0,0.5);
 }
-.collection {
-  border:1px solid red;
-  padding:10px;
-}
+
 .cart h2{
   margin-top:-0.5em;
   padding-bottom:1em;
+  color:#fff;
+  text-shadow:none;
 }
 .cart img {
   z-index:10;
@@ -70,7 +93,14 @@ float:right;
   width:32px !important;
   height:32px !important;
 }
-
+.collection {
+  position:relative;
+  border:1px solid red;
+  padding:10px;
+  display:table-column;
+  width:64px;
+  overflow-x:auto;
+}
 .background {
 	position:absolute;
 	top:-80px;
@@ -99,8 +129,17 @@ float:right;
   border:transparent !important;
 }
 
-h2 {
-	color:rgba(70,70,255,0.8);
-	text-shadow: 2px 2px 4px rgba(255,255,255,0.9), -2px -2px 4px rgba(255,255,255,0.9), -2px 2px 4px rgba(255,255,255,0.9), 2px -2px 4px rgba(255,255,255,0.9) !important;
-	font-weight:900;
+.small {
+  float:right;
+  height:32px;
+  width:36px;
+  margin:0px;
+  padding:0px;
+}
+.small img{
+  width:32px !important;
+  height:32px !important;
+}
+.small span {
+  display:none;
 }
