@@ -48,7 +48,7 @@ background:rgba(0,0,0,0.2);
 }
 
 body {
-	background:rgba(0,0,0,0.1);
+	background:rgba(0,0,0,0.15);
 	overflow:hidden !important;
 }
 
@@ -63,6 +63,7 @@ body {
 .startButton {
 	margin:2em;
 	opacity:0.5;
+	cursor:pointer;
 }
 .startButton:hover {
 	opacity:1;
@@ -74,4 +75,10 @@ body {
 }
 .list-group-item{
 	cursor:pointer;
+}
+
+h2 {
+	color:rgba(70,80,255,0.8);
+	text-shadow: 2px 2px 4px rgba(255,255,255,0.9), -2px -2px 4px rgba(255,255,255,0.9), -2px 2px 4px rgba(255,255,255,0.9), 2px -2px 4px rgba(255,255,255,0.9) !important;
+	font-weight:900;
 }
