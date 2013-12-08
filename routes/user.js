@@ -32,16 +32,22 @@ handlers.initPassport = function(passport) {
   ));
 
   passport.serializeUser(function(user, done) {
+    console.log('we serialized a user:' + user);
     done(null, user.id);
   });
 
   passport.deserializeUser(function(id, done) {
     User.findById(id, function(err, user) {
+      console.log('we\'ll deserialze a user:' + user);
       done(err, user);
     });
   });
 };
 
 
+
+handlers.loginForm = function(req, res) {
+  res.render('user/loginForm')
+};
 
 module.exports = handlers;
