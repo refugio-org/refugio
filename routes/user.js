@@ -3,6 +3,10 @@ var User = require('../models/user.js');
 
 var handlers = {}
 
+handlers.isAuthed = function(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/user/login');
+}
 
 handlers.initPassport = function(passport) {
   // passport initialization
@@ -48,6 +52,11 @@ handlers.initPassport = function(passport) {
 
 handlers.loginForm = function(req, res) {
   res.render('user/loginForm')
+};
+
+handlers.logout = function(req, res) {
+  req.logout();
+  res.redirect('/');
 };
 
 module.exports = handlers;

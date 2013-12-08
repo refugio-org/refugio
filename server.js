@@ -71,19 +71,10 @@ server.post('/user/login', passport.authenticate('local', {
   successRedirect: '/management',
   failureRedirect: '/user/login'
 }));
-
-server.get('/user/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
-});
+server.get('/user/logout', user.logout);
 
 // authenticated only
-var ensureAuthenticated = function(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login')
-};
-
-server.get('/management', ensureAuthenticated, management.list);
+server.get('/management', user.isAuthed, management.list);
 
 // places handlers
 var places = require('./routes/places.js');
