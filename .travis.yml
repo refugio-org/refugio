@@ -6,3 +6,4 @@ deploy:
   api_key:
     secure: h2ygYrjFrEHmmk5WdyPs/XxkPd7m5YkhLJg705fa7sgve8jgLT0DvZazQoARWVjDTBQxpI2dPkqufg0yzKlWSNz86bSdtm+W5GPV9LwUwzwTm3d2ZgaR4+jbh1r53QL5wrbMIULMvqedjUWabLNGxiTYUPd05YavCCBwz8XVy5U=
   app: refugio-test
+before_install: sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
