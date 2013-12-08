@@ -97,7 +97,7 @@ server.get('/cart/checkout', cart.checkout);
 
 // shopping handlers
 var shopping = require('./routes/shopping.js');
-server.get('/:id', shopping.listForPlace);
+server.get('/:name', shopping.listForPlace);
 server.get('/shopping', shopping.list);
 
 // other handlers
