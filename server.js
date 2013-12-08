@@ -57,9 +57,15 @@ server.configure('production', function() {
   server.use(express.errorHandler());
 });
 
+// app.locals
+var Place = require('./models/place.js');
+Place.find(function(err, found) {
+  if (err) throw err;
+  server.locals.places = found;
+});
+
 // handlers
 // ========
-
 
 // user handlers
 var admin = require('./routes/admin.js');

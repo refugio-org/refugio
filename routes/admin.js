@@ -10,6 +10,10 @@ var index = function(req, res) {
     if (err) throw err;
     res.render("admin/index", {places: found});
   });
+} 
+
+var places = function(req, res) {
+  
 }
 
 exports.initAdministrationRoutes = function(server) {
@@ -23,7 +27,7 @@ exports.initAdministrationRoutes = function(server) {
   server.get('/admin/items/:id', user.isAuthed, index );
   server.get('/admin/items/byPlace/:id', user.isAuthed, index );
 
-  server.get('/admin/reservations', user.isAuthed, index );
+  server.get('/admin/reservations', user.isAuthed, reservations.list );
   server.get('/admin/reservations/:id', user.isAuthed, index );
   server.get('/admin/reservations/byPlace/:id', user.isAuthed, index );
 }
