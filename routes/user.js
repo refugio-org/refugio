@@ -4,7 +4,13 @@ var User = require('../models/user.js');
 var handlers = {}
 
 handlers.isAuthed = function(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
+  if (process.env.DISABLE_USER_AUTH) {
+    console.log('process.env.DISABLE_USER_AUTH WAS SET TO TRUE, authentications is offline');
+  } else {
+    console.log('user authentication can be switched OFF by setting DISABLE_USER_AUTH to true');
+  }
+
+  if (process.env.DISABLE_USER_AUTH || req.isAuthenticated()) { return next(); }
   res.redirect('/user/login');
 }
 
@@ -36,13 +42,13 @@ handlers.initPassport = function(passport) {
   ));
 
   passport.serializeUser(function(user, done) {
-    console.log('we serialized a user:' + user);
+    // console.log('we serialized a user:' + user);
     done(null, user._id);
   });
 
   passport.deserializeUser(function(id, done) {
     User.findById(id, function(err, user) {
-      console.log('we\'ll deserialze a user:' + user);
+      // console.log('we\'ll deserialze a user:' + user);
       done(err, user);
     });
   });

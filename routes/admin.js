@@ -8,13 +8,12 @@ var user = require('./user.js')
 var index = function(req, res) {
   Place.find(function(err, found) {
     if (err) throw err;
-    res.render("admin/index", {places: found});
+
+    // res.render("admin/index", {places: found});
+    // only for easy of development, not to be checked in...
+    res.redirect('/admin/reservations');
   });
 } 
-
-var places = function(req, res) {
-  
-}
 
 exports.initAdministrationRoutes = function(server) {
   // authenticated only

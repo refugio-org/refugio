@@ -34,7 +34,7 @@ function saveCb(arr) {
     return function(err, obj) {
         if (err) throw err;
         arr.push(obj)
-        console.log("Saved:" + obj);
+        // console.log("Saved:" + obj);
     }
 }
 

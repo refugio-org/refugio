@@ -1,8 +1,9 @@
-extend _layout.jade
+extend ../_layout.jade
 
 block content
   .hero-unit
     h1 Manage Inventory
     p
       each reservation in reservations
-        h2 reservation
+        p
+          #{reservation}
