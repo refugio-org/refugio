@@ -40,6 +40,9 @@ position:fixed;
 width:100%;
 height:64px;
 background:rgba(0,0,0,0.2);
+top:0px;
+left:0px;
+margin:0;
 }
 .cart.item {
 	float:right;
@@ -75,6 +78,7 @@ body {
 }
 .list-group-item{
 	cursor:pointer;
+	background:none !important;
 }
 
 h2 {
