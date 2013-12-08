@@ -1,17 +1,10 @@
 var Place = require('../models/place.js');
 
-exports.create = function(req, res) {
-    new Place({name: req.params.name}).save(function(err, obj) {
-        if (err) throw err;
-        console.log('saved' + obj);
-        res.send("saved");
-    });
-}
 
+// list all places
 exports.list = function(req, res) {
-    var query = Place.find({}, function(err, results) {
-        if (err) throw err;
-        console.log(results)
-        res.render("placeList.jade", {places: results});
-    });
-}
+  Place.find({}, function(err, found) {
+    if (err) throw err;
+    res.render("index.jade", {places: found});
+  });
+};

@@ -44,41 +44,31 @@ server.configure('production', function() {
 });
 
 // handlers
-server.get('/', function(req, res) {
-    res.render('index.jade');
-});
-
 var management = require('./routes/management.js');
 var places = require('./routes/places.js');
 var categories = require('./routes/categories.js');
-
 var shopping = require('./routes/shopping.js')
-
-// new handler
 var cart = require('./routes/cart.js')
 
-// old handler
-var checkout = require('./routes/checkout.js');
-
-server.get('/places/:name', places.create);
-server.get('/places', places.list);
+// 
 server.get('/cats',categories.list);
 server.get('/management', management.list);
+
+// shopping handlers
+server.get('/', places.list);
 
 // cart handlers
 server.get('/cart',cart.listItems);
 server.post('/cart/item', cart.addItem);
+server.get('/cart/checkout', cart.checkout);
 
-// old routes
-server.get('/shopping/demo', shopping.demo);
+server.get('/:id', shopping.listForPlace);
 server.get('/shopping', shopping.list);
-server.get('/checkout', checkout.demo);
-
 
 if (!module.parent) {
     require('./reference/addDataToDb.js');
 }
-    
+
 var port = process.env.PORT || 3000;
 server.listen(port, function() {
     console.log("Express server listening on port %d in %s mode", port, server.settings.env);
