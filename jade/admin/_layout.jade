@@ -18,17 +18,17 @@ html(lang="de")
       .navbar-collapse.collapse
         ul.nav.navbar-nav
           li.dropdown
-           a(href="/admin", data-toggle="dropdown") Reservations <b class="caret"></b>
+            a(href="/admin/reservations", data-toggle="dropdown") Reservations <b class="caret"></b>
             
-           ul.dropdown-menu
+            ul.dropdown-menu
               each place in places
-                li: a(href="/reservations/byPlace/" + place._id)= place.name
+                li: a(href="/admin/reservations/byPlace/" + place._id)= place.name
 
           li.dropdown
             a(href="#", data-toggle="dropdown").dropdown-toggle Items <b class="caret"></b>
             ul.dropdown-menu
                each place in places
-                li: a(href="/items/byPlace/" + place._id)= place.name
+                li: a(href="/admin/items/byPlace/" + place._id)= place.name
           
           li.dropdown
             a(href="#", data-toggle="dropdown").dropdown-toggle Categories <b class="caret"></b>

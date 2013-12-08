@@ -73,8 +73,7 @@ server.post('/user/login', passport.authenticate('local', {
 }));
 server.get('/user/logout', user.logout);
 
-// authenticated only
-server.get('/admin', user.isAuthed, admin.list);
+admin.initAdministrationRoutes(server);
 
 // places handlers
 var places = require('./routes/places.js');
