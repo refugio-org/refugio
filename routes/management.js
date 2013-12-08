@@ -1,3 +1,3 @@
 exports.list = function(req, res) {
-    res.render("management.jade");
+    res.render("admin/index.jade");
 }
