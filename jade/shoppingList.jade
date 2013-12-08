@@ -5,8 +5,9 @@ block content
       img(src='/images/'+place.image, alt=place.name)
       =place.name
 
-      span(data-count="0").counter.hidden.badge 0
-        img(src="/images/cart.png")
+      img(src="/images/cart.png").hidden.shopping
+      a(href="/cart")
+        span(data-count="0").counter.hidden.label.label-info.label-sm 0
   ul.list-group
     each item in items
       li.list-group-item.item(id="#{item.name}", data-itemId="#{item._id}")

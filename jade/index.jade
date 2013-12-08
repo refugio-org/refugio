@@ -1,6 +1,7 @@
 extend _layout.jade
 
 block content
+  .h1.left refugio
   .background
     img(src='/images/map.png')
   .firstChoice
@@ -8,4 +9,4 @@ block content
       each pl, i in places
         img.startButton(role='button', src='/images/'+pl.image, alt=pl.name)
 
-    h2 Was auch immer du brauchst,<br>wir finden es für dich!
+    h2.bottom Was auch immer du brauchst,<br>wir finden es für dich!
