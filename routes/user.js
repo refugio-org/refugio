@@ -33,7 +33,7 @@ handlers.initPassport = function(passport) {
 
   passport.serializeUser(function(user, done) {
     console.log('we serialized a user:' + user);
-    done(null, user.id);
+    done(null, user._id);
   });
 
   passport.deserializeUser(function(id, done) {

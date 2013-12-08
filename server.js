@@ -67,15 +67,23 @@ var user = require('./routes/user.js');
 user.initPassport(passport);
 
 server.get('/user/login', user.loginForm);
-server.post('/user/login', passport.authenticate('local',{ successRedirect: '/management', failureRedirect: '/user/login' }));
-server.get('/user/logout', function(req, res){
+server.post('/user/login', passport.authenticate('local', {
+  successRedirect: '/management',
+  failureRedirect: '/user/login'
+}));
+
+server.get('/user/logout', function(req, res) {
   req.logout();
   res.redirect('/');
 });
 
 // authenticated only
-var auth = passport.authorize('local', { failureRedirect: '/user/login' });
-server.get('/management', auth, management.list);
+var ensureAuthenticated = function(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/login')
+};
+
+server.get('/management', ensureAuthenticated, management.list);
 
 // places handlers
 var places = require('./routes/places.js');
