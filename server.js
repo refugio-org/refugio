@@ -57,58 +57,38 @@ server.configure('production', function() {
   server.use(express.errorHandler());
 });
 
-// passport initialization
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    api.users.findById({
-      username: username
-    }, function(err, user) {
-      if (err) {
-        return done(err);
-      }
-
-      if (!user) {
-        return done(null, false, {
-          message: 'Incorrect username.'
-        });
-      }
-
-      user.validPassword(password, function(err, isMatch) {
-        if (err) {
-          return done(err);
-        }
-
-        if (!isMatch)
-          return done(null, false, {
-            message: 'Incorrect password.'
-          });
-
-        return done(null, user);
-      });
-    });
-  }
-));
-
 // handlers
-var management = require('./routes/management.js');
+// ========
+
+
+// user handlers
+var user = require('./routes/user.js');
+user.initPassport(passport);
+
+server.post('/user/login', passport.authenticate('local',{ successRedirect: '/admin', failureRedirect: '/user/login' }));
+// server.get('/logout', passport.logout);
+
+// places handlers
 var places = require('./routes/places.js');
-var categories = require('./routes/categories.js');
-var shopping = require('./routes/shopping.js')
-var cart = require('./routes/cart.js')
-
-server.get('/cats', categories.list);
-server.get('/management', management.list);
-
-// shopping handlers
 server.get('/', places.list);
 
 // cart handlers
+var cart = require('./routes/cart.js');
 server.get('/cart', cart.listItems);
 server.post('/cart/item', cart.addItem);
 server.get('/cart/checkout', cart.checkout);
 
+// shopping handlers
+var shopping = require('./routes/shopping.js');
 server.get('/:id', shopping.listForPlace);
 server.get('/shopping', shopping.list);
+
+// other handlers
+var management = require('./routes/management.js');
+var categories = require('./routes/categories.js');
+
+server.get('/cats', categories.list);
+server.get('/management', management.list);
 
 if (!module.parent) {
   require('./reference/addDataToDb.js');

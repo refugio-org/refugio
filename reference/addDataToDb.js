@@ -6,6 +6,7 @@ var Category = require('../models/category');
 var ToplevelCategory = require('../models/toplevelCategory')
 var Item = require('../models/item');
 var Reservation = require('../models/reservation');
+var User = require('../models/user');
 
 function cleanDb() {
     Place.remove({}, function(err) {
@@ -22,6 +23,9 @@ function cleanDb() {
     });
     Reservation.remove({}, function(err) {
         console.log('Reservations removed')
+    });
+    User.remove({}, function(err) {
+        console.log('Users removed')
     });
 }
 
@@ -120,5 +124,16 @@ function makeItems() {
     });
 }
 
+function makeUsers() {
+    User.create({
+        username: 'user1',
+        password: 'changeMe'
+    }, function(err) {
+        if (err) throw err;
+        console.log('created user')
+    });
+}
+
 cleanDb();
 makePlaces();
+makeUsers();
