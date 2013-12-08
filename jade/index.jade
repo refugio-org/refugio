@@ -1,9 +1,11 @@
 extend _layout.jade
 
 block content
-  .jumbotron
-    h1 Willkommen bei Refug.IO
-    p Was auch immer du brauchst, wir finden es für dich!
+  .background
+    img(src='/images/map.png')
+  .firstChoice
     p
       each pl, i in places
-        a.btn.btn-primary.btn-lg(href=pl._id, role='button')= pl.name
+        img.btn.btn-primary.btn-lg(href=pl._id, role='button', src='/images/'+pl.name+'.png')= pl.name
+
+    h2 Was auch immer du brauchst,<br>wir finden es für dich!
