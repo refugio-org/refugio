@@ -27,10 +27,51 @@ li  {
 	text-align:center;
 }
 
-#cart {
+/* overrides */
+.jumbotron {
+	background:rgba(0,0,0,0.2) !important;
+}
+
+
+/* designer classes */
+
+.cart {
 position:fixed;
 width:100%;
-float:right;
 height:64px;
 background:rgba(0,0,0,0.2);
+}
+.cart.item {
+	float:right;
+	width:32px;
+	height:32px;
+}
+
+body {
+	background:rgba(0,0,0,0.1);
+	overflow:hidden !important;
+}
+
+.background {
+	position:absolute;
+	top:-80px;
+	bottom:0px;
+ 	width:60%;
+  z-index:-1;
+  margin-left:20%;
+}
+.startButton {
+	margin:2em;
+	opacity:0.5;
+}
+.startButton:hover {
+	opacity:1;
+}
+.firstChoice {
+	width:90%;
+	height:100%;
+	text-align:center;
+}
+.list-group-item{
+	cursor:pointer;
 }
