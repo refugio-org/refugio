@@ -4,7 +4,8 @@ var mongoose = require('mongoose')
 var placeModel = new Schema({
   name: {type: String},
   address: {type: String},
-  telefon: {type: String}
+  telefon: {type: String},
+  image: {type: String}
 })
 
 module.exports = mongoose.model('Place', placeModel);

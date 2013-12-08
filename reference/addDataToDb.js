@@ -45,8 +45,8 @@ var items = [];
 var reservations = [];
 
 function makePlaces() {
-    var p1 = new Place({ "name": "Gängeviertel", "address": "just around the corner", "telefon": "040-123456" });
-    var p2 = new Place({ "name": "St.Pauli Kirche", "address": "farfaraway 1234", "telefon": "040-54321" });
+    var p1 = new Place({ "name": "Gängeviertel", "address": "just around the corner", "telefon": "040-123456","image":"gaenge.png"});
+    var p2 = new Place({ "name": "St.Pauli Kirche", "address": "farfaraway 1234", "telefon": "040-54321","image":"pauli.png" });
 
     p1.save(saveCb(places));
     p2.save(saveCb(places));
