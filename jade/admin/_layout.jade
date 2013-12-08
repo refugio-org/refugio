@@ -1,0 +1,45 @@
+doctype 5
+html(lang="de")
+  head
+    title RefugIO
+    meta(name='viewport',content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet',href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css')
+    link(rel='stylesheet',href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css')
+    link(rel='stylesheet',href='/css/admin.css')
+  body
+    .navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          button(type="button",data-toggle="collapse",data-target=".navbar-collapse").navbar-toggle
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      a(href="/").navbar-brand RefugIO
+      .navbar-collapse.collapse
+        ul.nav.navbar-nav
+          li.dropdown
+           a(href="/admin", data-toggle="dropdown") Reservations <b class="caret"></b>
+            
+           ul.dropdown-menu
+              each place in places
+                li: a(href="/reservations/byPlace/" + place._id)= place.name
+
+          li.dropdown
+            a(href="#", data-toggle="dropdown").dropdown-toggle Items <b class="caret"></b>
+            ul.dropdown-menu
+               each place in places
+                li: a(href="/items/byPlace/" + place._id)= place.name
+          
+          li.dropdown
+            a(href="#", data-toggle="dropdown").dropdown-toggle Categories <b class="caret"></b>
+            ul.dropdown-menu
+               li: a(href="/categories/catId") cat1
+               li: a(href="/categories/catId") cat2
+
+          li: a(href="#", data-toggle="dropdown").dropdown-toggle Places
+
+    .container
+      block content
+    footer
+    script(src='https://code.jquery.com/jquery.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js')

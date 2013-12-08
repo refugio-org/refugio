@@ -62,19 +62,19 @@ server.configure('production', function() {
 
 
 // user handlers
-var management = require('./routes/management.js');
+var admin = require('./routes/admin.js');
 var user = require('./routes/user.js');
 user.initPassport(passport);
 
 server.get('/user/login', user.loginForm);
 server.post('/user/login', passport.authenticate('local', {
-  successRedirect: '/management',
+  successRedirect: '/admin',
   failureRedirect: '/user/login'
 }));
 server.get('/user/logout', user.logout);
 
 // authenticated only
-server.get('/management', user.isAuthed, management.list);
+server.get('/admin', user.isAuthed, admin.list);
 
 // places handlers
 var places = require('./routes/places.js');
