@@ -13,7 +13,7 @@ var index = function(req, res) {
     // only for easy of development, not to be checked in...
     res.redirect('/admin/reservations');
   });
-} 
+}
 
 exports.initAdministrationRoutes = function(server) {
   // authenticated only
@@ -27,6 +27,6 @@ exports.initAdministrationRoutes = function(server) {
   server.get('/admin/items/byPlace/:id', user.isAuthed, index );
 
   server.get('/admin/reservations', user.isAuthed, reservations.list );
-  server.get('/admin/reservations/:id', user.isAuthed, index );
+  server.get('/admin/reservations/:id', user.isAuthed, reservations.show );
   server.get('/admin/reservations/byPlace/:id', user.isAuthed, index );
 }

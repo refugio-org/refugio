@@ -2,8 +2,20 @@ extend ../_layout.jade
 
 block content
   .hero-unit
-    h1 Manage Inventory
-    p
-      each reservation in reservations
-        p
-          #{reservation}
+    h1 Reservations
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th #
+          th name
+          th expires 
+          th items
+          th cancel
+      tbody
+        each reservation in reservations
+          tr
+            td: a(href="/admin/reservations/#{reservation._id}")= reservation._id
+            td= reservation.name
+            td= reservation.expires
+            td= reservation.items.length
+            td: button(type="button").btn.btn-danger.btn-xs cancel

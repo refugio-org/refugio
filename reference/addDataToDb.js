@@ -29,11 +29,10 @@ function cleanDb() {
     });
 }
 
-
 function saveCb(arr) {
     return function(err, obj) {
         if (err) throw err;
-        arr.push(obj)
+        arr.push(obj);
         // console.log("Saved:" + obj);
     }
 }
@@ -83,12 +82,9 @@ function makeCats() {
             });
         });
     });
-
-
 }
 
 function makeItems() {
-
     var i1 = new Item({name: "zahnbuerste", description: "youknow", location: places[0]._id, category: cats[0]._id, icon: "toothbrush-icon.png"});
     var i2 = new Item({name: "zahnpasta", description: "youknow", location: places[0]._id, category: cats[0]._id, icon: "shower_demo.png"});
     var i3 = new Item({name: "seife", description: "youknow", location: places[1]._id, category: cats[1]._id, icon: "shower_demo.png"});
@@ -114,8 +110,15 @@ function makeItems() {
                         i6.save(function(err, it6) {
                             if (err) throw err;
                             cats.push(it6);
-                    	    var r1 = new Reservation({name: "dummy reservation", items: [it3._id, it4._id]});
-                    	    r1.save(saveCb(reservations));
+                            
+                            var r1 = new Reservation({name: "dummy reservation name 1", expires: Date.now(), items: [it3._id, it4._id]});
+                            r1.save(saveCb(reservations));
+                            
+                            var r2 = new Reservation({name: "dummy reservation name 2", expires: Date.now(), items: [it1._id]});
+                            r2.save(saveCb(reservations));
+                            
+                            var r3 = new Reservation({name: "dummy reservation name 3", expires: Date.now(), items: [it5._id]});
+                            r3.save(saveCb(reservations));
                         });
                     });
                 });

@@ -1,0 +1,18 @@
+extend ../_layout.jade
+
+block content
+  .hero-unit
+    h1 Reservation
+      .input-group
+        span.input-group-addon name
+        input(type="text")= reservation.name
+      
+      .input-group
+        span.input-group-addon expires
+        input(type="text")= reservation.expires
+      
+      .input-group
+        span.input-group-addon items
+        input(type="text")= reservation.items.length
+        
+      button(type="button").btn.btn-danger cancel
