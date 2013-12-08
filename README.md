@@ -46,4 +46,23 @@ selektierbar und wird sofort für eine kurze Zeit reserviert. Beim
 Gutscheindruck wird die Dauer der Reservierung auf eine Zeit bis zur Abholung
 verlängert.
 
+RHoK Hamburg 2013
+=================
+http://rhokhh.org/
+
+Im Rahmen der Random Hack of Kindness Hamburg 2013, einer Veranstaltung bei der
+sich Programmierer ein Wochenende für ein gemeinnütziges Projekt engagieren,
+wurde eine grundlegende Implementierung von refug.io erstellt.
+
+Beteiligte
+----------
+- Stefan Brueck
+- Kjellski O
+- Henry Bubert
+- Denjell Thompson
+- Arne Wichmann
+- Anonymous A. Hacker
+- Anonymous B. Hacker
+
+
 
