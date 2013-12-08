@@ -4,28 +4,29 @@ block content
   .hero-unit
     h1 Manage Inventory
     p 
-      select(name="Types")
-        option(value="null") Choose
-        option(value="bathroom") Bathroom
-        option(value="clothing") Clothing
-        option(value="food") Food
-        option(value="other") Other
+      .left
+        select(name="Types")
+          option(value="null") Choose
+          option(value="bathroom") Bathroom
+          option(value="clothing") Clothing
+          option(value="food") Food
+          option(value="other") Other
     p
-      .bathroom.hidden.type
+      .bathroom.hidden.type.left
         select(name="bathroom")
           option(value="null") Choose
           option(value="Toothpaste") Toothpaste
           option(value="Soap") Soap
           option(value="Shampoo") Shampoo    
     p
-       .clothing.hidden.type
+       .clothing.hidden.type.left
           select(name="clothing")
             option(value="null") Choose
             option(value="Jacket") Jacket
             option(value="Shirt") Shirt
             option(value="Pants") Pants
     p
-        .food.hidden.type
+        .food.hidden.type.left
           select(name="food")
             option(value="null") Choose
             option(value="Cheese") Cheese
@@ -33,14 +34,14 @@ block content
             option(value="Bread") Bread
             option(value="Chocolate") Chocolate
     p
-        .other.hidden.type
+        .other.hidden.type.left
           select(name="misc")
             option(value="") Choose
             option(value="Flutes") Food
             option(value="Backpacks") Clothing
             option(value="Flashlights") Misc
     p
-        .actions.hidden
+        .actions.hidden.left
           .glyphicon.glyphicon-plus-sign.action.btn(value="add",role='button')
           .glyphicon.glyphicon-minus-sign.action.btn(value="remove",role='button')
           .glyphicon.glyphicon-sort.action.btn(value="recount",role='button')

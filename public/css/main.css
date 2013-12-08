@@ -10,3 +10,27 @@ span  {
 li  {
   float: left;
 }
+
+
+
+/* helper classes */
+
+.right {
+	float:right;
+}
+
+.left {
+	 float:left;
+}
+
+.center {
+	text-align:center;
+}
+
+#cart {
+position:fixed;
+width:100%;
+float:right;
+height:64px;
+background:rgba(0,0,0,0.2);
+}
