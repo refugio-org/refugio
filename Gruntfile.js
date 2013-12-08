@@ -1,6 +1,5 @@
 'use strict';
 
-
 module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     require('time-grunt')(grunt);
@@ -26,6 +25,8 @@ module.exports = function(grunt) {
                 files: [
                     './jade/**/*.jade',
                     './routes/{,*//*}*.js',
+                    './model/{,*//*}*.js',
+                    './public/{,*//*}*.{png,jpg,jpeg,gif,webp,svg,js,html,css}',
                     './server.js'
                 ],
                 tasks: ['express:dev'],
