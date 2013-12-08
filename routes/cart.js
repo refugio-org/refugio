@@ -1,8 +1,9 @@
 var Item = require('../models/item.js');
 var Reservation = require('../models/reservation.js');
 
+var QRCode = require('qrcode');
+
 exports.listItems = function(req, res) {
-  console.dir(req.reservation);
   if (req.reservation.items.length > 0)  {
     Item.find({_id: {$in: req.reservation.items}}, function(err, found) {
       if (err) throw err;
@@ -27,5 +28,17 @@ exports.addItem = function(req, res) {
 };
 
 exports.checkout = function(req, res) {
-  res.render("checkout.jade", {});
+  if (req.reservation.items.length > 0) {
+    Item.find({_id: {$in: req.reservation.items}}, function(err, found) {
+      if (err) throw err;
+
+      QRCode.toDataURL('http://refugio-test.herokuapp.com/reservation/'+req.reservation._id, function(err, qruri) {
+        if (err) throw err;
+
+        res.render("cart/checkout.jade", {reservation: req.reservation, items: found, qrcode: qruri});
+      })
+    });
+  } else {
+    res.redirect('/');
+  }
 };

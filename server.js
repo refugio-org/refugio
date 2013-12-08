@@ -83,7 +83,7 @@ server.get('/', places.list);
 var cart = require('./routes/cart.js');
 server.get('/cart', cart.listItems);
 server.post('/cart/item', cart.addItem);
-server.get('/cart/checkout', cart.checkout);
+server.post('/cart/checkout', cart.checkout);
 
 // shopping handlers
 var shopping = require('./routes/shopping.js');
@@ -91,6 +91,9 @@ server.get('/:name', shopping.listForPlace);
 server.get('/shopping', shopping.list);
 
 // other handlers
+server.get('/reservation/:id', function(req, res) {
+  res.send(req.params.id);
+});
 
 var categories = require('./routes/categories.js');
 

@@ -6,3 +6,5 @@ block content
       li.list-group-item(id="#{item.name}", data-itemId="#{item._id}").cart
           img(src="/images/#{item.icon}")
           span #{item.name}
+  form(action="/cart/checkout", method="post")
+    input(type="submit").btn.btn-large.btn-primary Checkout
