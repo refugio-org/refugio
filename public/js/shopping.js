@@ -9,7 +9,7 @@ $(document).ready(function() {
     })
     .done(function( msg ) {
       console.log("Id:"+itemId);
-      alert( "Item Saved: " + itemId);
+      // alert( "Item Saved: " + itemId);
     });
   });
 });
