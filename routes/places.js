@@ -1,9 +1,10 @@
 var Place = require('../models/place.js');
 
+
+// list all places
 exports.list = function(req, res) {
-    var query = Place.find({}, function(err, results) {
-        if (err) throw err;
-        console.log(results)
-        res.render("placeList.jade", {places: results});
-    });
-}
+  Place.find({}, function(err, found) {
+    if (err) throw err;
+    res.render("index.jade", {places: found});
+  });
+};

@@ -26,6 +26,6 @@ exports.addItem = function(req, res) {
 	});
 };
 
-exports.demo = function(req, res) {
+exports.checkout = function(req, res) {
   res.render("checkout.jade", {});
 };

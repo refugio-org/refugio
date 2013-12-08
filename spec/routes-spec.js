@@ -18,6 +18,6 @@ describe('POST /cart', function(){
       .set('Accept', 'application/json')
       .expect('Content-Type', 'application/json')
       .expect('Location', '/cart/item/4711')
-      .expect(201, {id: },done);
+      .expect(201,done);
   });
 });

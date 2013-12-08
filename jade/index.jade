@@ -5,5 +5,5 @@ block content
     h1 Willkommen bei Refug.IO
     p Was auch immer du brauchst, wir finden es für dich!
     p
-      a.btn.btn-primary.btn-lg(href='/shopping#stPauli',role='button') Saint Pauli Kirche
-      a.btn.btn-primary.btn-lg(href='/shopping#gaengeviertel',role='button') Gängeviertel
+      each pl, i in places
+        a.btn.btn-primary.btn-lg(href=pl._id, role='button')= pl.name
