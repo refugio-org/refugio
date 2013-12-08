@@ -65,7 +65,8 @@ server.get('/places', places.list);
 server.get('/cats',categories.list);
 server.get('/management', management.list);
 
-//
+// cart handlers
+server.get('/cart',cart.listItems);
 server.post('/cart/item', cart.addItem);
 
 // old routes
