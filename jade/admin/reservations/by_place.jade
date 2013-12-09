@@ -1,2 +1,6 @@
-each res in reservations
-  h2 res
+extend ../_layout.jade
+
+block content
+  .hero-unit
+    h1 Reservations for #{location.name}
+    include _table

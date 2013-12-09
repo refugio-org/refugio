@@ -1,0 +1,17 @@
+
+table.table.table-striped.table-hover
+  thead
+    tr
+      th #
+      th name
+      th expires 
+      th items
+      th cancel
+  tbody
+    each reservation in reservations
+      tr
+        td= reservation._id
+        td= reservation.name
+        td= reservation.expires
+        td= reservation.items.length
+        td: button(type="button").btn.btn-danger.btn-xs cancel

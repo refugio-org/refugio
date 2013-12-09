@@ -50,7 +50,8 @@ exports.byPlace = function(req, res) {
       }, function(err, reservationsInPlace) {
         console.log('reservationsInPlace by foundPlace:', reservationsInPlace);
         res.render("admin/reservations/by_place", {
-          reservations: reservationsInPlace
+          reservations: reservationsInPlace,
+          location: foundPlace
         });
       });
     });
