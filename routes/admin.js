@@ -9,9 +9,9 @@ var index = function(req, res) {
   Place.find(function(err, found) {
     if (err) throw err;
 
-    // res.render("admin/index", {places: found});
+    res.render("admin/index", {places: found});
     // only for easy of development, not to be checked in...
-    res.redirect('/admin/reservations');
+    //res.redirect('/admin/reservations');
   });
 }
 
@@ -27,6 +27,5 @@ exports.initAdministrationRoutes = function(server) {
   server.get('/admin/items/byPlace/:id', user.isAuthed, index );
 
   server.get('/admin/reservations', user.isAuthed, reservations.list );
-  server.get('/admin/reservations/:id', user.isAuthed, reservations.show );
-  server.get('/admin/reservations/byPlace/:id', user.isAuthed, index );
+  server.get('/admin/reservations/byPlace/:id', user.isAuthed, reservations.byPlace );
 }

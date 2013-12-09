@@ -89,7 +89,7 @@ function makeItems() {
     var i2 = new Item({name: "zahnpasta", description: "youknow", location: places[0]._id, category: cats[0]._id, icon: "shower_demo.png"});
     var i3 = new Item({name: "seife", description: "youknow", location: places[1]._id, category: cats[1]._id, icon: "shower_demo.png"});
     var i4 = new Item({name: "duschgel", description: "youknow", location: places[1]._id, category: cats[1]._id, icon: "shower_demo.png"});
-    var i5 = new Item({name: "schlafsack", description: "youknow", location: places[0]._id, category: cats[2]._id, icon: "shower_demo.png"});
+    var i5 = new Item({name: "schlafsack", description: "youknow", location: places[1]._id, category: cats[2]._id, icon: "shower_demo.png"});
     var i6 = new Item({name: "isomatte", description: "youknow", location: places[0]._id, category: cats[3]._id, icon: "shower_demo.png"});
 
     i1.save(function(err, it1) {
