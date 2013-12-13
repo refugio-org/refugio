@@ -9,8 +9,7 @@
     "mongoose": "~3.8.1",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
-    "bcrypt": "~0.7.7",
-    "qrcode": "~0.2.8"
+    "bcrypt": "~0.7.7"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
