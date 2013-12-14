@@ -35,7 +35,6 @@ exports.checkout = function(req, res) {
     Item.find({_id: {$in: req.reservation.items}}, function(err, found) {
       if (err) throw err;
       var qrRequest = {
-        'method': 'GET',
         'protocol': 'https',
         'hostname': 'mutationevent-qr-code-generator.p.mashape.com',
         'pathname': '/generate.php',
@@ -48,10 +47,11 @@ exports.checkout = function(req, res) {
       };
 
       var opts = {
-        url: url.format(qrRequest),
-        headers: {
-          "Accept": "application/json",
-          "X-Mashape-Authorization": "rjumr0yqea5lxk3aejm7sw0lqqbwxt" // we could put this in a env variable if we had heroku access....
+        'method': 'GET',
+        'url': url.format(qrRequest),
+        'headers': {
+          'Accept': 'application/json',
+          'X-Mashape-Authorization': 'rjumr0yqea5lxk3aejm7sw0lqqbwxt' // we could put this in a env variable if we had heroku access....
         }
       };
 
