@@ -1,3 +1,8 @@
+// reqs
+var request = require('request');
+var url = require('url');
+
+// models
 var Item = require('../models/item.js');
 var Reservation = require('../models/reservation.js');
 
@@ -29,8 +34,38 @@ exports.checkout = function(req, res) {
   if (req.reservation.items.length > 0) {
     Item.find({_id: {$in: req.reservation.items}}, function(err, found) {
       if (err) throw err;
+      var qrRequest = {
+        'method': 'GET',
+        'protocol': 'https',
+        'hostname': 'mutationevent-qr-code-generator.p.mashape.com',
+        'pathname': '/generate.php',
+        'query': {
+          'content': 'http://refugio-test.herokuapp.com/reservation/'+req.reservation._id,
+          'quality': 'quality',
+          'size': 'size',
+          'type': 'url'
+        },
+      };
 
-      res.render("cart/checkout.jade", {reservation: req.reservation, items: found});
+      var opts = {
+        url: url.format(qrRequest),
+        headers: {
+          "Accept": "application/json",
+          "X-Mashape-Authorization": "rjumr0yqea5lxk3aejm7sw0lqqbwxt" // we could put this in a env variable if we had heroku access....
+        }
+      };
+
+      function callback(error, qrResp, qrBody) {
+        if (!error && qrResp.statusCode == 200) {
+            var qrInfo = JSON.parse(qrBody);
+            res.render("cart/checkout.jade", {reservation: req.reservation, items: found, qr: qrInfo});
+        } else {
+          // todo we should have more of these:
+          res.render('500.jade', {title:'500: Internal Server Error', error: error})
+        }
+      }
+
+      request(opts, callback);
     });
   } else {
     res.redirect('/');

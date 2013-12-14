@@ -2,7 +2,7 @@ extend ../_layout.jade
 
 block content
   h1 Reservation ID: #{reservation._id}
-  p: img(src="#", alt="SomeQrCode")
+  p: img(src=qr.image_url, alt="TheQrCode")
   ul
     each i in items
       li= i.name
